@@ -1,0 +1,96 @@
+.contact {
+  text-align: center;
+  margin: auto 12%;
+}
+.contact-body h2 {
+  margin-top: 80px;
+  color: #000;
+}
+.contact-sub {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 60px;
+  margin-top: 80px;
+}
+.contact-forms {
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-forms input {
+  margin-bottom: 10px;
+  padding: 0 10px;
+  width: 100%;
+  height: 50px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+}
+input[type="text"]:focus,
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+select:hover,
+textarea:hover {
+  border: 3px solid #555;
+}
+select:hover {
+  cursor: pointer;
+}
+.ftextarea {
+  width: 100%;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+}
+.fmessage {
+  width: 100%;
+  height: 100px;
+  padding: 10px 10px;
+  resize: none;
+  margin-bottom: 10px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.5s;
+}
+.fmessage:focus {
+  border: 3px solid #555;
+}
+.buttons {
+  margin: 10%;
+  text-align: center;
+}
+.btn-hover {
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.4s ease-in-out;
+}
+.btn-hover:hover {
+  background-position: 100% 0;
+  transition: all 0.4s ease-in-out;
+}
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color-3 {
+  background-image: linear-gradient(
+    to right,
+    #667eea,
+    #764ba2,
+    #6b8dd6,
+    #8e37d7
+  );
+  box-shadow: 0 4px 15px 0 rgba(116, 79, 168, 0.75);
+}
