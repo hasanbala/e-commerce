@@ -31,9 +31,6 @@ input[type="email"]:hover,
 input[type="password"]:hover {
   border: 3px solid #555;
 }
-select:hover {
-  cursor: pointer;
-}
 .err {
   color: red;
 }

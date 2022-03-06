@@ -1,0 +1,36 @@
+.signup {
+  text-align: center;
+  margin: auto 12%;
+}
+.h2x {
+  margin-top: 60px;
+  color: #000;
+  font-size: xx-large;
+}
+.signup-sub {
+  margin: 80px 0 60px 0;
+}
+.signup-forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signup-forms input {
+  margin-top: 20px;
+  width: 50%;
+  height: 50px;
+  border: 3px solid #ccc;
+  border-radius: 15px;
+  outline: none;
+  transition: 0.5s;
+  padding: 5px;
+}
+input[type="email"]:hover,
+input[type="password"]:hover {
+  border: 3px solid #555;
+}
+.hover {
+  border: 3px solid red !important;
+  box-shadow: 0 4px 15px 0 #ff0000;
+}

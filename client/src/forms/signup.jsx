@@ -1,10 +1,14 @@
 import { useFormik } from "formik";
-import { validation as validationSchema } from "./validations";
+import { validation as validationSchema } from "./validateUp";
 import { Button } from "../components";
-import "../styles/contact.css";
 import { fetchRegister } from "../pages";
+import { useState } from "react";
+import { AppUseContext } from "../context";
+import "../styles/signup.css";
 
-export const SignUp = () => {
+export const SignUp = ({ history }) => {
+  const [hover] = useState("hover");
+  const { login } = AppUseContext();
   const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -18,22 +22,23 @@ export const SignUp = () => {
             email: values.email,
             password: values.password,
           });
-          console.log(response);
+          login(response);
+          history.push("/profile");
         } catch (error) {
           bag.setErrors({ general: error.response.data.message });
         }
-        console.log(values);
       },
       validationSchema,
     });
 
   return (
-    <div className="contact">
-      <h2 style={{ color: "#000" }}>Sign Up</h2>
+    <div className="signup">
+      <h2 className="h2x">Sign Up</h2>
       <div>{errors.general}</div>
-      <div className="contact-sub">
-        <form className="contact-forms" onSubmit={handleSubmit}>
+      <div className="signup-sub">
+        <form className="signup-forms" onSubmit={handleSubmit}>
           <input
+            className={errors.email && touched.email ? hover : ""}
             type="email"
             name="email"
             placeholder="email@example.com"
@@ -42,10 +47,8 @@ export const SignUp = () => {
             onBlur={handleBlur}
             value={values.email}
           />
-          {errors.email && touched.email && (
-            <div className="err"> {errors.email} </div>
-          )}
           <input
+            className={errors.password && touched.password ? hover : ""}
             type="password"
             name="password"
             placeholder="Password"
@@ -54,10 +57,10 @@ export const SignUp = () => {
             onBlur={handleBlur}
             value={values.password}
           />
-          {errors.password && touched.password && (
-            <div className="err"> {errors.password} </div>
-          )}
           <input
+            className={
+              errors.passwordConfirm && touched.passwordConfirm ? hover : ""
+            }
             type="password"
             name="passwordConfirm"
             placeholder="Password Confirm"
@@ -66,10 +69,9 @@ export const SignUp = () => {
             onBlur={handleBlur}
             value={values.passwordConfirm}
           />
-          {errors.password && touched.password && (
-            <div className="err"> {errors.password} </div>
-          )}
-          <Button btn="btn-hover color-5" message="Send" />
+          <div style={{ marginTop: "40px" }}>
+            <Button btn="btn-hover color-9" message="Sign Up" />
+          </div>
         </form>
       </div>
     </div>

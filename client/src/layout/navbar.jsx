@@ -3,8 +3,10 @@ import { Toggle } from "./toogle";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
 import { Button } from "../components";
+import { AppUseContext } from "../context";
 
 export const Navbar = () => {
+  const { logged } = AppUseContext();
   const openNav = useRef();
   const closeNavX = useRef();
   const closeNav = useRef();
@@ -20,6 +22,39 @@ export const Navbar = () => {
       document.documentElement.style.setProperty("--nav-width", "0%");
     };
   }, []);
+
+  const logPro = () => {
+    return (
+      <>
+        <li style={{ marginRight: "20px" }}>
+          <Link className="drop-link" to="/signin">
+            <Button btn="btn-hoverx color-8" message="Log In">
+              <b>Log In</b>
+            </Button>
+          </Link>
+        </li>
+        <li>
+          <Link className="drop-link" to="/signup">
+            <Button btn="btn-hoverx color-11" message="Sign Up">
+              <b>Sign Up</b>
+            </Button>
+          </Link>
+        </li>
+      </>
+    );
+  };
+
+  const profile = () => {
+    return (
+      <li>
+        <Link className="drop-link" to="/profile">
+          <Button btn="btn-hover color-5" message="Go Profile">
+            <b>Go Profile</b>
+          </Button>
+        </Link>
+      </li>
+    );
+  };
 
   return (
     <div className="navbar">
@@ -60,20 +95,8 @@ export const Navbar = () => {
           <li className="toggle" ref={openNav}>
             <i className="fas fa-align-justify" />
           </li>
-          <li style={{ marginRight: "20px" }}>
-            <Link className="drop-link" to="/signin">
-              <Button btn="btn-hoverx color-8" message="Log In">
-                <b>Log In</b>
-              </Button>
-            </Link>
-          </li>
-          <li>
-            <Link className="drop-link" to="/signup">
-              <Button btn="btn-hoverx color-11" message="Sign Up">
-                <b>Sign Up</b>
-              </Button>
-            </Link>
-          </li>
+          {!logged && logPro()}
+          {logged && profile()}
         </ul>
       </nav>
       <Toggle closeNavX={closeNavX} closeNav={closeNav} />
