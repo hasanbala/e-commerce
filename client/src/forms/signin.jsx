@@ -1,5 +1,6 @@
 import { Button } from "../components";
 import "../styles/contact.css";
+import "../styles/button.css";
 
 export const SignIn = () => {
   return (

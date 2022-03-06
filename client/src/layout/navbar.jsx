@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Toggle } from "./toogle";
 import { Link } from "react-router-dom";
 import "../styles/navbar.css";
+import { Button } from "../components";
 
 export const Navbar = () => {
   const openNav = useRef();
@@ -34,8 +35,8 @@ export const Navbar = () => {
                 marginLeft: "40px",
               }}
             >
-              <Link className="link" to="/" data-hover="navi.home">
-                navi.home
+              <Link className="link" to="/" data-hover="General">
+                General
               </Link>
             </li>
             <li
@@ -44,8 +45,8 @@ export const Navbar = () => {
                 marginLeft: "40px",
               }}
             >
-              <Link className="link" to="/" data-hover="navi.contact">
-                navi.contact
+              <Link className="link" to="/products" data-hover="Products">
+                Products
               </Link>
             </li>
           </ul>
@@ -60,21 +61,17 @@ export const Navbar = () => {
             <i className="fas fa-align-justify" />
           </li>
           <li style={{ marginRight: "20px" }}>
-            <Link className="drop-link" to="/login">
-              <div className="dropdown">
-                <button className="dropbtn">
-                  <b>Log In</b>
-                </button>
-              </div>
+            <Link className="drop-link" to="/signin">
+              <Button btn="btn-hoverx color-8" message="Log In">
+                <b>Log In</b>
+              </Button>
             </Link>
           </li>
           <li>
-            <Link className="drop-link" to="/login">
-              <div className="dropdown">
-                <button className="dropbtn">
-                  <b>Sign Up</b>
-                </button>
-              </div>
+            <Link className="drop-link" to="/signup">
+              <Button btn="btn-hoverx color-11" message="Sign Up">
+                <b>Sign Up</b>
+              </Button>
             </Link>
           </li>
         </ul>

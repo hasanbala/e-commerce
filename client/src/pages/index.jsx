@@ -1,4 +1,4 @@
-export * from "./navbar";
 export * from "./notFound";
-export * from "./footer";
-export * from "./content";
+export * from "./products";
+export * from "./productsDetail";
+export * from "./fetches";

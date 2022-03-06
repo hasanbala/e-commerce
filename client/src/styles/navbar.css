@@ -1,7 +1,9 @@
 .navbarsub {
-  background: -webkit-linear-gradient(to top, #ffc371, #ff5f6d);
-  background: linear-gradient(to top, #ffc371, #ff5f6d);
-
+  background: linear-gradient(
+    99deg,
+    rgb(43, 118, 124) 0%,
+    rgb(66, 126, 134) 100%
+  );
   display: flex;
   justify-content: space-between;
 }
@@ -21,11 +23,11 @@
 h2 {
   transition: 0.6s;
   font-size: 24 px;
-  color: #000;
+  color: #fff;
 }
 .link {
   text-decoration: none;
-  color: #000;
+  color: #fff;
   text-shadow: none;
   position: relative;
 }
@@ -121,27 +123,4 @@ h2 {
 }
 .overlay .closebtn:hover {
   color: #ff0000;
-}
-/*                       */
-.dropdown {
-  position: relative;
-  display: block;
-}
-.drop-link {
-  text-decoration: none;
-  color: #000;
-  text-shadow: none;
-}
-.dropbtn {
-  background-color: #000;
-  color: #fff;
-  padding: 8px 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  transition: 0.5s;
-  border-radius: 5px;
-}
-.dropbtn:hover {
-  opacity: 0.7;
 }

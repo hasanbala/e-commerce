@@ -1,0 +1,25 @@
+.cards {
+  min-height: 500px;
+}
+.cards img {
+  border-radius: 5px;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cart-exp {
+  margin-top: 5px;
+}
+.cart-exp,
+.cart-cost {
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 4px;
+}
+.high {
+  background: #d2eaff;
+}

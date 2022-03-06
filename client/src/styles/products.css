@@ -1,0 +1,42 @@
+.products {
+  margin: 0 6%;
+}
+.products-core {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 1400px) {
+  .products-core {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 1150px) {
+  .products {
+    margin: 0;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .products-core {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 720px) {
+  .products-core {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.buttonload {
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+}
+.fa {
+  margin-left: -12px;
+  margin-right: 8px;
+}
+.more {
+  text-align: center;
+}

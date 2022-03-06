@@ -2,11 +2,9 @@
   margin: 0 20% 40px 20%;
 }
 .footer {
-  background: #ff5f6d;
-  background: -webkit-linear-gradient(to top, #ffc371, #ff5f6d);
-  background: linear-gradient(to top, #ffc371, #ff5f6d);
+  background: linear-gradient(99deg, #2b767c 0%, #427e86 100%);
   padding-top: 50px;
-  color: #000;
+  color: #fff;
 }
 .footer h3 {
   color: #fff;
@@ -22,11 +20,12 @@
   font-size: large;
   text-decoration: none;
   display: inline-block;
-  color: #000;
+  color: #fff;
 }
 .footer a:hover {
-  color: #fff;
+  color: #000;
   cursor: pointer;
+  transition: 0.2s;
 }
 .footer-d {
   margin: auto 10%;
@@ -46,8 +45,6 @@
 .footer-bottom {
   text-align: center;
   padding: 20px;
-  color: #000;
-  background: #ff5f6d;
-  background: -webkit-linear-gradient(to top, #ffc371, #ff5f6d);
-  background: linear-gradient(to top, #ffc371, #ff5f6d);
+  color: #fff;
+  background: linear-gradient(99deg, #2b767c 0%, #427e86 100%);
 }

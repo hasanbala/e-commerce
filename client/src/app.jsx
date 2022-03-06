@@ -1,7 +1,8 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { Navbar, NotFound, Footer, Content } from "./pages";
+import { NotFound, Products, ProductsDetail } from "./pages";
 import { ToastContainer } from "react-toastify";
-import { SignIn } from "./forms";
+import { Footer, Navbar, Main } from "./layout";
+import { SignIn, SignUp } from "./forms";
 import "../node_modules/react-toastify/dist/ReactToastify.css";
 
 export const App = () => {
@@ -9,8 +10,11 @@ export const App = () => {
     <BrowserRouter>
       <Navbar />
       <Switch>
-        <Route exact path="/" component={Content} />
-        <Route exact path="/login" component={SignIn} />
+        <Route exact path="/" component={Main} />
+        <Route exact path="/products" component={Products} />
+        <Route exact path="/product/:id" component={ProductsDetail} />
+        <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/signup" component={SignUp} />
         <Route component={NotFound} />
       </Switch>
       <Footer />

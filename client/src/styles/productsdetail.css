@@ -1,0 +1,15 @@
+.details {
+  margin: 2% 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 100px;
+}
+.details img {
+  border-radius: 10px;
+  width: 100%;
+}
+.detail {
+  margin: 40px 0;
+}
