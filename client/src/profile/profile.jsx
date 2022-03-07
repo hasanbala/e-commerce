@@ -8,6 +8,7 @@ export const Profile = () => {
 
   const handleOut = async () => {
     logout();
+    localStorage.removeItem("cart");
   };
   return (
     <div className="detail">
@@ -24,7 +25,7 @@ export const Profile = () => {
           <label>{user.email}</label>
         </div>
         <Link className="drop-link" to="/">
-          <Button btn="btn-hover color-0" message="Log Out" onclick={handleOut}>
+          <Button btn="btn-hover out" message="Log Out" onclick={handleOut}>
             <b>Log Out</b>
           </Button>
         </Link>

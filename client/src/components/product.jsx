@@ -2,10 +2,21 @@ import { useState } from "react";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
 import "../styles/card.css";
+import { AppCartContext, AppUseContext } from "../context";
+import { toast } from "react-toastify";
 
-export const Card = ({ item }) => {
+export const Product = ({ item }) => {
   const [ihover, setIhover] = useState(false);
   const handleHover = () => setIhover(!ihover);
+  const { items, addCart } = AppCartContext();
+  const { logged, stylex } = AppUseContext();
+  let choosenItem = items.find((key) => key._id === item._id);
+
+  const handleBuy = () => {
+    logged ? addCart(item, choosenItem) : toast.error("Please Sign In", stylex);
+    choosenItem = false;
+  };
+  console.log(choosenItem);
 
   return (
     <div className="cards">
@@ -33,7 +44,13 @@ export const Card = ({ item }) => {
             <b>{item.price}</b>
           </p>
         </div>
-        {ihover && <Button btn="btn-hover color-5" message="Add to cart" />}
+        {ihover && (
+          <Button
+            btn={choosenItem ? "btn-hover rmv" : "btn-hover addcart"}
+            message={choosenItem ? "Remove Item" : "Add to cart"}
+            onclick={handleBuy}
+          />
+        )}
       </div>
     </div>
   );

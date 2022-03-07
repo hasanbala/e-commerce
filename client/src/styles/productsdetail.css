@@ -1,4 +1,4 @@
-.details {
+.products-details {
   margin: 2% 12%;
   display: flex;
   flex-direction: column;
@@ -6,10 +6,15 @@
   align-items: center;
   padding-bottom: 100px;
 }
-.details img {
+.products-details img {
   border-radius: 10px;
   width: 100%;
 }
-.detail {
-  margin: 40px 0;
+.products-desc {
+  text-align: center;
+  margin: 50px 0;
+  padding: 0 20px 20px 20px;
+  width: 75%;
+  box-shadow: 1px 2px 2px 2px #6ab2bb;
+  border-radius: 5px;
 }

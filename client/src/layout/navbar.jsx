@@ -1,12 +1,13 @@
+import { AppCartContext, AppUseContext } from "../context";
 import { useEffect, useRef } from "react";
 import { Toggle } from "./toogle";
 import { Link } from "react-router-dom";
-import "../styles/navbar.css";
 import { Button } from "../components";
-import { AppUseContext } from "../context";
+import "../styles/navbar.css";
 
 export const Navbar = () => {
   const { logged } = AppUseContext();
+  const { items } = AppCartContext();
   const openNav = useRef();
   const closeNavX = useRef();
   const closeNav = useRef();
@@ -28,14 +29,14 @@ export const Navbar = () => {
       <>
         <li style={{ marginRight: "20px" }}>
           <Link className="drop-link" to="/signin">
-            <Button btn="btn-hoverx color-8" message="Log In">
+            <Button btn="btn-hover login" message="Log In">
               <b>Log In</b>
             </Button>
           </Link>
         </li>
         <li>
           <Link className="drop-link" to="/signup">
-            <Button btn="btn-hoverx color-11" message="Sign Up">
+            <Button btn="btn-hover signup" message="Sign Up">
               <b>Sign Up</b>
             </Button>
           </Link>
@@ -46,13 +47,25 @@ export const Navbar = () => {
 
   const profile = () => {
     return (
-      <li>
-        <Link className="drop-link" to="/profile">
-          <Button btn="btn-hover color-5" message="Go Profile">
-            <b>Go Profile</b>
-          </Button>
-        </Link>
-      </li>
+      <>
+        <li style={{ marginRight: "20px" }}>
+          {items.length > 0 && (
+            <Link to="/cart">
+              <Button
+                btn="btn-hover cart"
+                message="Cart"
+                icon={true}
+                len={items.length}
+              />
+            </Link>
+          )}
+        </li>
+        <li>
+          <Link className="drop-link" to="/profile">
+            <Button btn="btn-hover goprofile" message="Go Profile" />
+          </Link>
+        </li>
+      </>
     );
   };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useInfiniteQuery } from "react-query";
 import { fetchProductList } from "./fetches.jsx";
-import { Card } from "../components";
+import { Product } from "../components";
 import "../styles/products.css";
 
 export const Products = () => {
@@ -29,7 +29,7 @@ export const Products = () => {
         {data.pages.map((group, i) => (
           <React.Fragment key={i}>
             {group.map((item) => (
-              <Card key={item._id} item={item} />
+              <Product key={item._id} item={item} />
             ))}
           </React.Fragment>
         ))}

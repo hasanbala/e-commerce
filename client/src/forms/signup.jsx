@@ -70,7 +70,7 @@ export const SignUp = ({ history }) => {
             value={values.passwordConfirm}
           />
           <div style={{ marginTop: "40px" }}>
-            <Button btn="btn-hover color-9" message="Sign Up" />
+            <Button btn="btn-hover signup" message="Sign Up" />
           </div>
         </form>
       </div>

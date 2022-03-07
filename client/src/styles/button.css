@@ -18,7 +18,9 @@
 .btn-hover:focus {
   outline: none;
 }
-.btn-hover.color-5 {
+
+/* add to cart button */
+.btn-hover.addcart {
   background-image: linear-gradient(
     to right,
     #0ba360,
@@ -26,9 +28,23 @@
     #30dd8a,
     #2bb673
   );
-  box-shadow: 0 4px 15px 0 rgba(23, 168, 108, 0.75);
+  box-shadow: 0 4px 15px 0 #17a86cbf;
 }
-.btn-hoverx.color-8 {
+
+/* go to profile button */
+.btn-hover.goprofile {
+  background-image: linear-gradient(
+    to right,
+    #ff7300,
+    #ff8929,
+    #ffd035,
+    #ffce47
+  );
+}
+
+/* login button */
+.btn-hover.login {
+  width: 100px;
   background-image: linear-gradient(
     to right,
     #29323c,
@@ -36,9 +52,12 @@
     #2b5876,
     #4e4376
   );
-  box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
+  box-shadow: 0 4px 15px 0 #2d3641bf;
 }
-.btn-hoverx.color-11 {
+
+/* signup button */
+.btn-hover.signup {
+  width: 100px;
   background-image: linear-gradient(
     to right,
     #eb3941,
@@ -46,19 +65,23 @@
     #e14e53,
     #e2373f
   );
-  box-shadow: 0 5px 15px rgba(242, 97, 103, 0.4);
+  box-shadow: 0 5px 15px #f2616766;
 }
-.btn-hover.color-0 {
+
+/* out button */
+.btn-hover.out {
   background-image: linear-gradient(
     to right,
-    #ff0000,
-    #ff3300,
-    #ff6600,
-    #ff9100
+    #000000,
+    #6e3d3d,
+    #be3131,
+    #ce1919
   );
-  box-shadow: 0 4px 15px 0 #880000;
+  box-shadow: 0 4px 15px 0 #4d4d4d;
 }
-.btn-hover.color-9 {
+
+/* cart button */
+.btn-hover.cart {
   background-image: linear-gradient(
     to right,
     #25aae1,
@@ -66,25 +89,17 @@
     #04befe,
     #3f86ed
   );
-  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  box-shadow: 0 4px 15px 0 #4184eabf;
 }
-.btn-hoverx {
-  width: 100px;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  cursor: pointer;
-  height: 40px;
-  text-align: center;
-  border: none;
-  background-size: 300% 100%;
-  border-radius: 5px;
-  transition: all 0.4s ease-in-out;
-}
-.btn-hoverx:hover {
-  background-position: 100% 0;
-  transition: all 0.4s ease-in-out;
-}
-.btn-hoverx:focus {
-  outline: none;
+
+/* remove button */
+.btn-hover.rmv {
+  background-image: linear-gradient(
+    to right,
+    #e1256d,
+    #eb4492,
+    #e104fe,
+    #ad3fed
+  );
+  box-shadow: 0 4px 15px 0 #ff51cbbf;
 }

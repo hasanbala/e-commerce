@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { UserContextProvider } from "./context";
+import { CartContextProvider, UserContextProvider } from "./context";
 import ReactDOM from "react-dom";
 import React from "react";
 import { App } from "./app";
@@ -19,7 +19,9 @@ ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <UserContextProvider>
-        <App />
+        <CartContextProvider>
+          <App />
+        </CartContextProvider>
       </UserContextProvider>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
