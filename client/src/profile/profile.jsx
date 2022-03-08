@@ -1,14 +1,18 @@
-import { Link } from "react-router-dom";
+import { AppCartContext, AppUseContext } from "../context";
 import { Button } from "../components";
-import { AppUseContext } from "../context";
+import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
 import "../styles/profile.css";
 
 export const Profile = () => {
-  const { user, logout } = AppUseContext();
+  const { user, logout, stylex } = AppUseContext();
+  const { emptyCart } = AppCartContext();
 
   const handleOut = async () => {
     logout();
-    localStorage.removeItem("cart");
+    emptyCart();
+    toast.info("Goodbye baby", stylex);
   };
   return (
     <div className="detail">
@@ -24,10 +28,8 @@ export const Profile = () => {
         <div className="detail-body-div">
           <label>{user.email}</label>
         </div>
-        <Link className="drop-link" to="/">
-          <Button btn="btn-hover out" message="Log Out" onclick={handleOut}>
-            <b>Log Out</b>
-          </Button>
+        <Link to="/">
+          <Button btn="btn-hover out" message="Log Out" onclick={handleOut} />
         </Link>
       </div>
     </div>

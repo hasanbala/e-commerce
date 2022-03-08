@@ -1,14 +1,15 @@
-import { useFormik } from "formik";
 import { validation as validationSchema } from "./validateIn";
-import { Button } from "../components";
-import { fetchLogin } from "../pages";
-import { useState } from "react";
 import { AppUseContext } from "../context";
+import { fetchLogin } from "../api";
+import { useFormik } from "formik";
+import { useState } from "react";
+import { Button } from "../components";
+import { toast } from "react-toastify";
 import "../styles/signup.css";
 
 export const SignIn = ({ history }) => {
   const [hover] = useState("hover");
-  const { login } = AppUseContext();
+  const { login, stylex } = AppUseContext();
   const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -22,8 +23,10 @@ export const SignIn = ({ history }) => {
             password: values.password,
           });
           login(response);
-          history.push("/profile");
+          toast.success("You're in baby", stylex);
+          history.push("/");
         } catch (error) {
+          toast.error("The email address was not found", stylex);
           bag.setErrors({ general: error.response.data.message });
         }
       },
@@ -33,7 +36,6 @@ export const SignIn = ({ history }) => {
   return (
     <div className="signup">
       <h2 className="h2x">Sign IN</h2>
-      <div>{errors.general}</div>
       <div className="signup-sub">
         <form className="signup-forms" onSubmit={handleSubmit}>
           <input

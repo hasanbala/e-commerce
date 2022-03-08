@@ -1,0 +1,23 @@
+.adm {
+  margin: 2% 8%;
+  padding-bottom: 100px;
+  min-height: 300px;
+}
+.adm ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.adm li {
+  margin-right: 20px;
+}
+.adm-link {
+  text-decoration: none;
+  color: blue;
+  margin-right: 10px;
+}
+a {
+  text-decoration: none;
+  color: blue;
+}

@@ -1,11 +1,17 @@
-import { Link } from "react-router-dom";
-import { Button } from "../components";
 import { AppCartContext } from "../context";
-import "../styles/cartdetails.css";
+import { OrderModal } from "./orderModal";
+import { useState } from "react";
+import { Button } from "../components";
+import { Link } from "react-router-dom";
+import "../styles/cart.css";
+import "react-responsive-modal/styles.css";
 
 export const Cart = () => {
   const { items, removeCart } = AppCartContext();
+  const [open, setOpen] = useState(false);
+
   const total = items.reduce((acc, obj) => acc + obj.price, 0);
+  const handleOrder = () => setOpen(true);
 
   return (
     <div className="sepet-details">
@@ -23,14 +29,7 @@ export const Cart = () => {
             {items.map((item, index) => (
               <li className="sepet-det" key={index}>
                 <Link to={`product/${item._id}`}>
-                  <img
-                    width="400"
-                    height="300"
-                    src={
-                      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80"
-                    }
-                    alt="img"
-                  />
+                  <img width="400" height="300" src={item.photos} alt="img" />
                 </Link>
                 <div>{item.title} </div>
                 <p>
@@ -46,8 +45,15 @@ export const Cart = () => {
             ))}
           </ul>
           <div className="total">
-            TOTAL :<small>$</small> {total}
+            <Button
+              onclick={handleOrder}
+              btn="btn-hover addcart"
+              message="Order"
+            ></Button>
+            <small> $</small>
+            {total}
           </div>
+          <OrderModal open={open} setOpen={setOpen} />
         </div>
       )}
     </div>

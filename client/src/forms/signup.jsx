@@ -1,14 +1,13 @@
-import { useFormik } from "formik";
 import { validation as validationSchema } from "./validateUp";
-import { Button } from "../components";
-import { fetchRegister } from "../pages";
-import { useState } from "react";
 import { AppUseContext } from "../context";
+import { fetchRegister } from "../api";
+import { useFormik } from "formik";
+import { Button } from "../components";
+import { toast } from "react-toastify";
 import "../styles/signup.css";
 
 export const SignUp = ({ history }) => {
-  const [hover] = useState("hover");
-  const { login } = AppUseContext();
+  const { login, stylex } = AppUseContext();
   const { handleSubmit, handleChange, values, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -23,7 +22,8 @@ export const SignUp = ({ history }) => {
             password: values.password,
           });
           login(response);
-          history.push("/profile");
+          toast.success("Welcome fresh blood", stylex);
+          history.push("/products");
         } catch (error) {
           bag.setErrors({ general: error.response.data.message });
         }
@@ -38,7 +38,7 @@ export const SignUp = ({ history }) => {
       <div className="signup-sub">
         <form className="signup-forms" onSubmit={handleSubmit}>
           <input
-            className={errors.email && touched.email ? hover : ""}
+            className={errors.email && touched.email ? "hover" : ""}
             type="email"
             name="email"
             placeholder="email@example.com"
@@ -48,7 +48,7 @@ export const SignUp = ({ history }) => {
             value={values.email}
           />
           <input
-            className={errors.password && touched.password ? hover : ""}
+            className={errors.password && touched.password ? "hover" : ""}
             type="password"
             name="password"
             placeholder="Password"
@@ -59,7 +59,7 @@ export const SignUp = ({ history }) => {
           />
           <input
             className={
-              errors.passwordConfirm && touched.passwordConfirm ? hover : ""
+              errors.passwordConfirm && touched.passwordConfirm ? "hover" : ""
             }
             type="password"
             name="passwordConfirm"

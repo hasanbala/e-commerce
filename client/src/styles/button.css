@@ -72,12 +72,11 @@
 .btn-hover.out {
   background-image: linear-gradient(
     to right,
-    #000000,
-    #6e3d3d,
-    #be3131,
-    #ce1919
+    #ff0000,
+    #ff3300,
+    #ff5100,
+    #ff7300
   );
-  box-shadow: 0 4px 15px 0 #4d4d4d;
 }
 
 /* cart button */
@@ -102,4 +101,19 @@
     #ad3fed
   );
   box-shadow: 0 4px 15px 0 #ff51cbbf;
+}
+
+/* admin button */
+.btn-hover.admin {
+  background-image: linear-gradient(
+    to right,
+    #bebebe,
+    #8f8f8f,
+    #4b4b4b,
+    #313131
+  );
+}
+
+.btn-hover.adminsetup {
+  margin-top: 60px;
 }

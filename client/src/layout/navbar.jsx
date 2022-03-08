@@ -6,7 +6,7 @@ import { Button } from "../components";
 import "../styles/navbar.css";
 
 export const Navbar = () => {
-  const { logged } = AppUseContext();
+  const { logged, user } = AppUseContext();
   const { items } = AppCartContext();
   const openNav = useRef();
   const closeNavX = useRef();
@@ -28,17 +28,13 @@ export const Navbar = () => {
     return (
       <>
         <li style={{ marginRight: "20px" }}>
-          <Link className="drop-link" to="/signin">
-            <Button btn="btn-hover login" message="Log In">
-              <b>Log In</b>
-            </Button>
+          <Link to="/signin">
+            <Button btn="btn-hover login" message="Log In" />
           </Link>
         </li>
         <li>
-          <Link className="drop-link" to="/signup">
-            <Button btn="btn-hover signup" message="Sign Up">
-              <b>Sign Up</b>
-            </Button>
+          <Link to="/signup">
+            <Button btn="btn-hover signup" message="Sign Up" />
           </Link>
         </li>
       </>
@@ -61,7 +57,7 @@ export const Navbar = () => {
           )}
         </li>
         <li>
-          <Link className="drop-link" to="/profile">
+          <Link to="/profile">
             <Button btn="btn-hover goprofile" message="Go Profile" />
           </Link>
         </li>
@@ -108,6 +104,11 @@ export const Navbar = () => {
           <li className="toggle" ref={openNav}>
             <i className="fas fa-align-justify" />
           </li>
+          {user?.role === "admin" && (
+            <Link to="/admin">
+              <Button btn="btn-hover admin" message="Admin" />
+            </Link>
+          )}
           {!logged && logPro()}
           {logged && profile()}
         </ul>

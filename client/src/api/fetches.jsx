@@ -46,8 +46,35 @@ export const fetchProfile = async () => {
 };
 
 export const fetchOut = async () => {
-  const { data } = await axios.post("http://localhost:4000/auth/logout", {
+  const { data } = await axios.post(`http://localhost:4000/auth/logout`, {
     refresh_token: localStorage.getItem("refresh-token"),
   });
+  return data;
+};
+
+export const fetchOrder = async (input) => {
+  const { data } = await axios.post(`http://localhost:4000/order`, input);
+  return data;
+};
+
+export const fetchAdminOrders = async () => {
+  const { data } = await axios.get("http://localhost:4000/order");
+  return data;
+};
+
+export const fetchAdminDeletes = async (id) => {
+  const { data } = await axios.delete(`http://localhost:4000/product/${id}`);
+  return data;
+};
+
+export const fetchAdminUpdateProduct = async (input, id) => {
+  const { data } = await axios.put(
+    `http://localhost:4000/product/${id}`,
+    input
+  );
+  return data;
+};
+export const fetchAdminAddNewProduct = async (input) => {
+  const { data } = await axios.post(`http://localhost:4000/product/`, input);
   return data;
 };

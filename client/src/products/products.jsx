@@ -1,6 +1,6 @@
 import React from "react";
 import { useInfiniteQuery } from "react-query";
-import { fetchProductList } from "./fetches.jsx";
+import { fetchProductList } from "../api/fetches.jsx";
 import { Product } from "../components";
 import "../styles/products.css";
 
@@ -21,7 +21,6 @@ export const Products = () => {
 
   if (status === "loading") return "Loading..";
   if (status === "error") return "An error has occured..";
-
   return (
     <div className="products">
       <h1>prodücts</h1>
@@ -36,7 +35,7 @@ export const Products = () => {
       </div>
       <div className="more">
         <button
-          // className="buttonload"
+          className="load-more"
           onClick={() => fetchNextPage()}
           disabled={!hasNextPage || isFetchingNextPage}
         >

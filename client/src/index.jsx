@@ -1,6 +1,6 @@
+import { CartContextProvider, UserContextProvider } from "./context";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { CartContextProvider, UserContextProvider } from "./context";
 import ReactDOM from "react-dom";
 import React from "react";
 import { App } from "./app";

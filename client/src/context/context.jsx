@@ -1,5 +1,5 @@
 import { useContext, createContext, useState, useEffect } from "react";
-import { fetchOut, fetchProfile } from "../pages";
+import { fetchOut, fetchProfile } from "../api";
 
 const UserContext = createContext(null);
 export const AppUseContext = () => useContext(UserContext);

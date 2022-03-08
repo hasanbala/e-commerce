@@ -18,16 +18,20 @@ export const CartContextProvider = ({ children }) => {
     const filterAdd = items.filter((item) => item._id !== choosenItem._id);
     setItems(filterAdd);
   };
+
   const removeCart = (id) => {
     const filterPop = items.filter((item) => item._id !== id);
     setItems(filterPop);
   };
+
+  const emptyCart = () => setItems([]);
 
   const contextValue = {
     items,
     setItems,
     addCart,
     removeCart,
+    emptyCart,
   };
 
   return (

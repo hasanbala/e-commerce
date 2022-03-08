@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 export const Toggle = ({ closeNavX, closeNav }) => {
   return (
     <div id="myNav" className="overlay">
@@ -11,12 +10,12 @@ export const Toggle = ({ closeNavX, closeNav }) => {
           <div ref={closeNav}>
             <li>
               <Link className="link" to="/">
-                navi.home
+                Homepage
               </Link>
             </li>
             <li>
-              <Link className="link" to="/contact">
-                navi.contact
+              <Link className="link" to="/products">
+                Products
               </Link>
             </li>
           </div>

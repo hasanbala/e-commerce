@@ -1,22 +1,27 @@
 import { useState } from "react";
 import { Button } from "./button";
 import { Link } from "react-router-dom";
-import "../styles/card.css";
 import { AppCartContext, AppUseContext } from "../context";
 import { toast } from "react-toastify";
+import "../styles/product.css";
 
 export const Product = ({ item }) => {
   const [ihover, setIhover] = useState(false);
   const handleHover = () => setIhover(!ihover);
   const { items, addCart } = AppCartContext();
-  const { logged, stylex } = AppUseContext();
-  let choosenItem = items.find((key) => key._id === item._id);
+  const { logged, stylex, user } = AppUseContext();
+  let choosenItem = null;
 
+  if (logged) {
+    choosenItem = items.find((key) => key._id === item._id);
+  }
   const handleBuy = () => {
-    logged ? addCart(item, choosenItem) : toast.error("Please Sign In", stylex);
-    choosenItem = false;
+    if (logged) {
+      addCart(item, choosenItem);
+    } else {
+      toast.error("Please Sign In", stylex);
+    }
   };
-  console.log(choosenItem);
 
   return (
     <div className="cards">
@@ -31,8 +36,10 @@ export const Product = ({ item }) => {
             height="240"
             src={
               !ihover
-                ? "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                : "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1026&q=80"
+                ? item.photos[0] ||
+                  "https://images.unsplash.com/photo-1502054195739-505158fe7855?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1073&q=80"
+                : item.photos[1] ||
+                  "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
             }
             alt="img"
           />
@@ -44,13 +51,16 @@ export const Product = ({ item }) => {
             <b>{item.price}</b>
           </p>
         </div>
-        {ihover && (
-          <Button
-            btn={choosenItem ? "btn-hover rmv" : "btn-hover addcart"}
-            message={choosenItem ? "Remove Item" : "Add to cart"}
-            onclick={handleBuy}
-          />
-        )}
+
+        {user?.role === "admin"
+          ? null
+          : ihover && (
+              <Button
+                btn={choosenItem ? "btn-hover rmv" : "btn-hover addcart"}
+                message={choosenItem ? "Remove Item" : "Add to cart"}
+                onclick={handleBuy}
+              />
+            )}
       </div>
     </div>
   );

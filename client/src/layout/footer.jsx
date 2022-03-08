@@ -1,5 +1,4 @@
 import "../styles/footer.css";
-
 export const Footer = () => {
   return (
     <footer className="footer">
@@ -9,28 +8,28 @@ export const Footer = () => {
           <hr className="footer-hr" />
           <ul>
             <li>
-              <a href="#!">footer.docs.installation</a>
+              <a href="#!">installation</a>
             </li>
             <li>
-              <a href="#!">footer.docs.mainConcepts</a>
+              <a href="#!">mainConcepts</a>
             </li>
             <li>
-              <a href="#!">footer.docs.advancedGuides</a>
+              <a href="#!">advancedGuides</a>
             </li>
             <li>
-              <a href="#!">footer.docs.apiReference</a>
+              <a href="#!">apiReference</a>
             </li>
             <li>
-              <a href="#!">footer.docs.hooks</a>
+              <a href="#!">hooks</a>
             </li>
             <li>
-              <a href="#!">footer.docs.testing</a>
+              <a href="#!">testing</a>
             </li>
             <li>
-              <a href="#!">footer.docs.contributing</a>
+              <a href="#!">contributing</a>
             </li>
             <li>
-              <a href="#!">footer.docs.faq</a>
+              <a href="#!">faq</a>
             </li>
           </ul>
         </div>
@@ -39,22 +38,22 @@ export const Footer = () => {
           <hr className="footer-hr" />
           <ul>
             <li>
-              <a href="#!">footer.channels.gitHub</a>
+              <a href="#!">gitHub</a>
             </li>
             <li>
-              <a href="#!">footer.channels.stackOverflow</a>
+              <a href="#!">stackOverflow</a>
             </li>
             <li>
-              <a href="#!">footer.channels.discussionForums</a>
+              <a href="#!">discussionForums</a>
             </li>
             <li>
-              <a href="#!">footer.channels.devCommunity</a>
+              <a href="#!">devCommunity</a>
             </li>
             <li>
-              <a href="#!">footer.channels.facebook</a>
+              <a href="#!">facebook</a>
             </li>
             <li>
-              <a href="#!">footer.channels.twitter</a>
+              <a href="#!">twitter</a>
             </li>
           </ul>
         </div>
@@ -63,19 +62,19 @@ export const Footer = () => {
           <hr className="footer-hr" />
           <ul>
             <li>
-              <a href="#!">footer.more.tutorial</a>
+              <a href="#!">tutorial</a>
             </li>
             <li>
-              <a href="#!">footer.more.blog</a>
+              <a href="#!">blog</a>
             </li>
             <li>
-              <a href="#!">footer.more.acknowledgements</a>
+              <a href="#!">acknowledgements</a>
             </li>
             <li>
-              <a href="#!">footer.more.privacy</a>
+              <a href="#!">privacy</a>
             </li>
             <li>
-              <a href="#!">footer.more.terms</a>
+              <a href="#!">terms</a>
             </li>
           </ul>
         </div>
@@ -84,10 +83,10 @@ export const Footer = () => {
           <hr className="footer-hr" />
           <ul>
             <li>
-              <a href="#!">footer.community.codeofConduct</a>
+              <a href="#!">codeofConduct</a>
             </li>
             <li>
-              <a href="#!">footer.community.communityResources</a>
+              <a href="#!">communityResources</a>
             </li>
           </ul>
         </div>
